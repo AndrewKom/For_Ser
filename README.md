@@ -17,11 +17,12 @@
 6. [КДЗ 6](https://github.com/AndrewKom/For_Ser/tree/master/Semester%201/Lab6)
 
 ## Семестр 2:
-1. 
-2. 
-3. 
-4. 
-5. 
+1. [КДЗ 1](https://github.com/AndrewKom/For_Ser/tree/master/Semester%202/Lab1)
+2. [КДЗ 2](https://github.com/AndrewKom/For_Ser/tree/master/Semester%202/Lab2)
+3. [КДЗ 3](https://github.com/AndrewKom/For_Ser/tree/master/Semester%202/Lab3)
+4. [КДЗ 4](https://github.com/AndrewKom/For_Ser/tree/master/Semester%202/Lab4)
+5. [КДЗ 5](https://github.com/AndrewKom/For_Ser/tree/master/Semester%202/Lab5)
+
 
 ## Семестр 3:
 1. 
