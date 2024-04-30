@@ -26,7 +26,7 @@
 
 ## Семестр 3:
 1. [КДЗ 1](https://github.com/AndrewKom/For_Ser/tree/master/Semester%203/Lab1)
-2. Soon
+2. [КДЗ 2](https://github.com/AndrewKom/For_Ser/tree/master/Semester%203/Lab2)
 3. 
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=30&pause=1000&color=F70000&center=true&random=false&width=435&lines=%D0%9F%D0%BE%D0%B4%D0%BF%D0%B8%D1%81%D0%BA%D0%B0!;%D0%97%D0%B2%D0%B5%D0%B7%D0%B4%D0%B0!)]()
