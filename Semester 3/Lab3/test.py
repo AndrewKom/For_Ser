@@ -51,6 +51,7 @@ for i in range(1, N + 1):
     x2list.append(x2)
     table_1.add_row([i, bkg1, bkg2, l1, l2, f"{x1:.2f}", f"{x2:.2f}"])
 
+print(table_1)
 f1_list = []
 f2_list = []
 
@@ -216,7 +217,7 @@ for times in range(0, K):
     f1_list = baby_f1_list.copy()
     f2_list = baby_f2_list.copy()
 
-
+print(table_4)
 axes_4.set_title('Пункт 3.4')
 axes_4.set_xlabel("f1")
 axes_4.set_ylabel("f2")
