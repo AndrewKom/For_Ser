@@ -3,6 +3,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math
 
+
+
+
 class tochka:
     def __init__(self, x, y, f1=0,f2=0, status=0):
         self.x = x
@@ -31,6 +34,9 @@ plt.ylabel("x2")
 plt.savefig('Сетка.png')
 
 
+
+
+
 def make_data_1(x1,x2):
     x = np.arange(0, 2, 0.001)
     y = np.arange(0, 2, 0.001)
@@ -55,10 +61,15 @@ for i in range(fix_x):
     print(f'Фиксированная точка: x1={fix_t.x} x2={fix_t.y}')
     x,y,z = make_data_1(fix_t.x,fix_t.y)
 
-    plt.contour(x, y, z)
+    cs1 = plt.contour(x, y, z, colors='black',levels=20, linestyles='dashed')
+    plt.clabel(cs1)
 
     x, y, z = make_data_2(fix_t.x, fix_t.y)
-    plt.contour(x, y, z)
+    cs = plt.contour(x, y, z, levels=20, cmap='viridis')
+    plt.clabel(cs, inline=True, fontsize=8)
+    plt.xlim(0, 2)
+    plt.ylim(0, 2)
+
     plt.show()
 
 

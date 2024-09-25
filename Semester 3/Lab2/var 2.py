@@ -1,8 +1,8 @@
 from fractions import Fraction
 from decimal import Decimal
 
-A = [[4,9],[7,6]]
-B = [[6,1],[3,5]]
+A = [[9,1],[3,2]]
+B = [[5,15],[4,5]]
 
 C = A[0][0] - A[1][0] - A[0][1] + A[1][1]
 alpha = A[1][1] - A[0][1]
