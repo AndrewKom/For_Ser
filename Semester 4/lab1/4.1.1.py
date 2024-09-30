@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 
 
-#Настоящее задание. Значение q ограничено от
+#Настоящее задание. Значение q ограничено от 0.8, 1.6
 
 #Находим следующие данные и выводим как единную таблицу. Выводим тестовые 5 значений с шагом в 0.5 с отображением графиков
 #Далее выводим всю таблицу с шагом в 0.01
@@ -52,6 +52,7 @@ def grafprint(q):
     plt.tight_layout()
     plt.grid(color='black', linestyle='-', linewidth=2)
     ax.set_title(f"При q={q}")
+    plt.savefig(f"График при q={q}.jpg")
     plt.show()
 
 
