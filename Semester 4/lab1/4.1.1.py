@@ -74,6 +74,9 @@ def f_chit():
     pd.set_option('display.max_rows', None)
     print(df)
 
+    min_ch = df["F0"].min()
+    print(f"Минимальное значение по F0 = {round(min_ch,4)}")
+
 
 
 def printer(start=0.8,fin=1.61,sh=0.2):
@@ -82,5 +85,5 @@ def printer(start=0.8,fin=1.61,sh=0.2):
         grafprint(round(q,2))
 
 
-printer()
+#printer()
 f_chit()
