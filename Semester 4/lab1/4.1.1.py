@@ -1,7 +1,16 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import prettytable
+
+
+#Настоящее задание. Значение q ограничено от
+
+#Находим следующие данные и выводим как единную таблицу. Выводим тестовые 5 значений с шагом в 0.5 с отображением графиков
+#Далее выводим всю таблицу с шагом в 0.01
+# u1=u2 - производная
+# Подставляем в f1(u1,u2) f2 (u1,u2)
+# F0 - максимум среди F1 и F2
+# Финал - ищем минимум среди F0
 
 def v(q):
     return (q**2 * (q - 2)**2)
@@ -46,10 +55,7 @@ def grafprint(q):
     plt.show()
 
 
-# u1=u2 - производная
-# Подставляем в f1(u1,u2) f2 (u1,u2)
-# F0 - максимум среди F1 и F2
-# Финал - ищем минимум среди F0
+
 def f_chit():
     results = []
     q_vals = np.arange(0.8, 1.61, 0.01)
@@ -69,11 +75,11 @@ def f_chit():
 
 
 
-def printer(start=0.8,fin=1.61,sh=0.1):
+def printer(start=0.8,fin=1.61,sh=0.2):
     q_vals = np.arange(start, fin, sh)
     for q in q_vals:
-        grafprint(q)
+        grafprint(round(q,2))
 
-q=0.5
 
+printer()
 f_chit()

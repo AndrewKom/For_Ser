@@ -4,7 +4,7 @@ import numpy as np
 import math
 
 
-
+#Тестовое задание, сейчас не акутально
 
 class tochka:
     def __init__(self, x, y, f1=0,f2=0, status=0):
