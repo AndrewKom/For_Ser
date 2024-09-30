@@ -40,11 +40,11 @@ def grafprint(q):
     fig, ax = plt.subplots(figsize=(8, 8))
 
     # Линии уровня для f1
-    contour1 = ax.contour(U1, U2, F1, levels=20, cmap = 'CMRmap')
+    contour1 = ax.contour(U1, U2, F1, levels=20, colors = 'red')
     ax.clabel(contour1, inline=True, fontsize=8)
 
     # Линии уровня для f2
-    contour2 = ax.contour(U1, U2, F2, levels=20, cmap='autumn')
+    contour2 = ax.contour(U1, U2, F2, levels=20, colors='green')
     ax.clabel(contour2, inline=True, fontsize=8)
     ax.set_xlabel('u1')
     ax.set_ylabel('u2')
