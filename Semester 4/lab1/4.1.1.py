@@ -73,13 +73,18 @@ def f_chit():
     df = pd.DataFrame(results)
     pd.set_option('display.max_rows', None)
     print(df)
-
     min_ch = df["F0"].min()
     print(f"Минимальное значение по F0 = {round(min_ch,4)}")
+    plt.style.use('ggplot')
+    df.plot(x="q",y="F0")
+    plt.suptitle(f"Зависимость F0 от различных q")
+    plt.savefig(f"Зависимость F0 от различных q")
+    plt.show()
 
 
 
-def printer(start=0.8,fin=1.61,sh=0.2):
+
+def printer(start=0.8,fin=1.61,sh=0.5):
     q_vals = np.arange(start, fin, sh)
     for q in q_vals:
         grafprint(round(q,2))
