@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import math
 
-#Настоящее задание. Значение q ограничено от 0.8, 1.6
+#Настоящее задание. Значение q ограничено от 0.8, 2.3
 
 #Находим следующие данные и выводим как единную таблицу. Выводим тестовые 5 значений с шагом в 0.5 с отображением графиков
 #Далее выводим всю таблицу с шагом в 0.01
@@ -59,7 +59,7 @@ def grafprint(q):
 
 def f_chit():
     results = []
-    q_vals = np.arange(0.8, 2.3, 0.01)
+    q_vals = np.arange(0.8, 2.301, 0.001)
 
     for q in q_vals:
         u1_nash = d1(q)
@@ -67,7 +67,7 @@ def f_chit():
         F1 = f1(u1_nash, u2_nash,q)
         F2 = f2(u1_nash, u2_nash,q)
         F0 = max(F1, F2) + 10 * math.fabs(math.sin(10*q)) + 8
-        results.append({'q': q, 'u1': u1_nash, 'u2': u2_nash,
+        results.append({'q': q, 'u1': round(u1_nash,4), 'u2': round(u2_nash,4),
                         'F1': F1, 'F2': F2, 'F0': F0})
 
     df = pd.DataFrame(results)
@@ -84,7 +84,7 @@ def f_chit():
 
 
 
-def printer(start=0.8,fin=1.61,sh=0.5):
+def printer(start=0.8,fin=2.31,sh=0.2):
     q_vals = np.arange(start, fin, sh)
     for q in q_vals:
         grafprint(round(q,2))
