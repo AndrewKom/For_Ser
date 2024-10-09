@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-
+import math
 
 #Настоящее задание. Значение q ограничено от 0.8, 1.6
 
@@ -59,14 +59,14 @@ def grafprint(q):
 
 def f_chit():
     results = []
-    q_vals = np.arange(0.8, 1.61, 0.01)
+    q_vals = np.arange(0.8, 2.3, 0.01)
 
     for q in q_vals:
         u1_nash = d1(q)
         u2_nash = d2(q)
         F1 = f1(u1_nash, u2_nash,q)
         F2 = f2(u1_nash, u2_nash,q)
-        F0 = max(F1, F2)
+        F0 = max(F1, F2) + 10 * math.fabs(math.sin(10*q)) + 8
         results.append({'q': q, 'u1': u1_nash, 'u2': u2_nash,
                         'F1': F1, 'F2': F2, 'F0': F0})
 
