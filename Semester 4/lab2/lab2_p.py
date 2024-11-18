@@ -78,6 +78,9 @@ ax.scatter(result_df["q1"], result_df["q2"], result_df["u1_pred"], c="red")
 ax.scatter(result_df["q1"], result_df["q2"], result_df["u1_true"], c="blue")
 # syntax for plotting
 ax.set_title('U1')
+plt.xlabel("q1")
+plt.ylabel("q2")
+plt.savefig('u1.png')
 plt.show()
 
 
