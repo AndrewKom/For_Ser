@@ -69,7 +69,7 @@ print("\nPredictions:")
 print(result_df)
 
 
-'''
+
 #Отрисовка графики u1
 fig = plt.figure()
 ax = plt.axes(projection='3d')
@@ -95,5 +95,3 @@ plt.xlabel("q1")
 plt.ylabel("q2")
 plt.savefig('u2.png')
 plt.show()
-
-'''
