@@ -69,8 +69,8 @@ print("\nPredictions:")
 print(result_df)
 
 
-
-#Отрисовка графики
+'''
+#Отрисовка графики u1
 fig = plt.figure()
 ax = plt.axes(projection='3d')
 
@@ -83,4 +83,17 @@ plt.ylabel("q2")
 plt.savefig('u1.png')
 plt.show()
 
+#Отрисовка графики u1
+fig = plt.figure()
+ax = plt.axes(projection='3d')
 
+ax.scatter(result_df["q1"], result_df["q2"], result_df["u2_pred"], c="red")
+ax.scatter(result_df["q1"], result_df["q2"], result_df["u2_true"], c="blue")
+# syntax for plotting
+ax.set_title('U2')
+plt.xlabel("q1")
+plt.ylabel("q2")
+plt.savefig('u2.png')
+plt.show()
+
+'''
