@@ -39,7 +39,7 @@ model.add(Dense(50, activation='sigmoid', use_bias=True))
 model.add(Dense(3, activation='sigmoid',use_bias=True)) # выходной слой
 
 # Компиляция модели
-optimizer = Adam()  # Стохастический градиентный спуск/градиентный спуск адама!
+optimizer = Adam(learning_rate=0.001, beta_1=0.9, beta_2=0.999, epsilon=1e-07, amsgrad=False)  # Стохастический градиентный спуск/градиентный спуск адама!
 model.compile(loss='mean_squared_error', optimizer=optimizer)
 
 # Обучение модели
