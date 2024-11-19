@@ -15,13 +15,14 @@ import matplotlib.pyplot as plt
 
 
 
+
 # Загрузка данных
 data = pd.read_csv('tr_set_9_2.csv', delimiter=';')
 np.random.shuffle(data.values)
 
 # Подготовка данных
 X = data[['q1', 'q2']].values
-Y = data[['psi 1', 'u1', 'u2']].values
+Y = data[['tau', 'u1', 'u2']].values
 
 # Разделение данных на тренировочные и тестовые наборы
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
