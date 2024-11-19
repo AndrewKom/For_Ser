@@ -45,7 +45,7 @@ model.compile(loss='mean_squared_error', optimizer=optimizer)
 # Обучение модели
 history = model.fit(X_train, Y_train,
                     validation_data=(X_test, Y_test),
-                    epochs=500, #200,
+                    epochs=10, #500,
                     batch_size=21)
 
 # Оценка модели на тестовом наборе
@@ -87,6 +87,14 @@ ax.set_zlim(0, 1)
 ax.scatter(result_df["q1"], result_df["q2"], result_df["u1_pred"], c="red")
 ax.scatter(result_df["q1"], result_df["q2"], result_df["u1_true"], c="blue")
 
+# Определяем метки и цвета легенды
+legend_labels = ['Предсказанные значения', 'Настоящие значения']
+legend_colors = ['r', 'b']
+
+# Добавляем легенду к графику
+ax.legend(legend_labels, loc='upper right', scatterpoints=1, fontsize=10, markerscale=2)
+
+
 ax.set_title('U1')
 plt.xlabel("q1")
 plt.ylabel("q2")
@@ -100,6 +108,13 @@ ax.set_zlim(0, 1)
 
 ax.scatter(result_df["q1"], result_df["q2"], result_df["u2_pred"], c="red")
 ax.scatter(result_df["q1"], result_df["q2"], result_df["u2_true"], c="blue")
+
+# Определяем метки и цвета легенды
+legend_labels = ['Предсказанные значения', 'Настоящие значения']
+legend_colors = ['r', 'b']
+
+# Добавляем легенду к графику
+ax.legend(legend_labels, loc='upper right', scatterpoints=1, fontsize=10, markerscale=2)
 
 ax.set_title('U2')
 plt.xlabel("q1")
