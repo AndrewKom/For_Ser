@@ -141,5 +141,5 @@ ax.legend(legend_labels, loc='upper right', scatterpoints=1, fontsize=10, marker
 ax.set_title('psi')
 plt.xlabel("q1")
 plt.ylabel("q2")
-plt.savefig('u2.png')
+plt.savefig('psi.png')
 plt.show()
