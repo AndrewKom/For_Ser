@@ -22,7 +22,7 @@ np.random.shuffle(data.values)
 
 # Подготовка данных
 X = data[['q1', 'q2']].values
-Y = data[['tau', 'u1', 'u2']].values
+Y = data[['psi 1', 'u1', 'u2']].values
 
 # Разделение данных на тренировочные и тестовые наборы
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
@@ -101,7 +101,7 @@ plt.ylabel("q2")
 plt.savefig('u1.png')
 plt.show()
 
-#Отрисовка графики u1
+#Отрисовка графики u2
 fig = plt.figure()
 ax = plt.axes(projection='3d')
 ax.set_zlim(0, 1)
@@ -117,6 +117,28 @@ legend_colors = ['r', 'b']
 ax.legend(legend_labels, loc='upper right', scatterpoints=1, fontsize=10, markerscale=2)
 
 ax.set_title('U2')
+plt.xlabel("q1")
+plt.ylabel("q2")
+plt.savefig('u2.png')
+plt.show()
+
+
+#Отрисовка графики psi
+fig = plt.figure()
+ax = plt.axes(projection='3d')
+ax.set_zlim(0, 1)
+
+ax.scatter(result_df["q1"], result_df["q2"], result_df["psi1_pred"], c="red")
+ax.scatter(result_df["q1"], result_df["q2"], result_df["psi1_true"], c="blue")
+
+# Определяем метки и цвета легенды
+legend_labels = ['Предсказанные значения', 'Настоящие значения']
+legend_colors = ['r', 'b']
+
+# Добавляем легенду к графику
+ax.legend(legend_labels, loc='upper right', scatterpoints=1, fontsize=10, markerscale=2)
+
+ax.set_title('psi')
 plt.xlabel("q1")
 plt.ylabel("q2")
 plt.savefig('u2.png')
