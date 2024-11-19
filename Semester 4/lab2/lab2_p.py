@@ -11,7 +11,6 @@ from keras import initializers
 from mpl_toolkits import mplot3d
 import numpy as np
 import matplotlib.pyplot as plt
-import math as m
 
 
 
@@ -45,7 +44,7 @@ model.compile(loss='mean_squared_error', optimizer=optimizer)
 # Обучение модели
 history = model.fit(X_train, Y_train,
                     validation_data=(X_test, Y_test),
-                    epochs=10, #500,
+                    epochs=500, #500,
                     batch_size=21)
 
 # Оценка модели на тестовом наборе
