@@ -11,7 +11,8 @@ from keras import initializers
 from mpl_toolkits import mplot3d
 import numpy as np
 import matplotlib.pyplot as plt
-
+import plotly.graph_objects as go
+from scipy.interpolate import griddata
 
 
 
@@ -79,6 +80,10 @@ print(result_df)
 
 
 
+
+
+
+'''
 #Отрисовка графики u1
 fig = plt.figure()
 ax = plt.axes(projection='3d')
@@ -143,3 +148,68 @@ plt.xlabel("q1")
 plt.ylabel("q2")
 plt.savefig('psi.png')
 plt.show()
+
+'''
+
+max_psi = (result_df['psi1_true'] - result_df['psi1_pred'])**2
+print("max psi:", max_psi.max())
+
+max_u1 = (result_df['u1_true'] - result_df['u1_pred'])**2
+print("max u1:", max_u1.max())
+
+max_u2 = (result_df['u2_true'] - result_df['u2_pred'])**2
+max_u2.max()
+print("max u2:", max_u2.max())
+
+q1 = np.random.uniform(0, 3, 1000)
+q2 = np.random.uniform(0, 3, 1000)
+
+
+#U1
+rnd_df = pd.DataFrame({'q1': q1, 'q2': q2})
+pred_df = pd.DataFrame(model.predict(rnd_df),columns=['psi','u1','u2'])
+test_df = pd.concat([rnd_df,pred_df],axis=1)
+
+
+x = test_df['q1'].values
+y = test_df['q2'].values
+z = test_df['u1'].values
+
+grid_x, grid_y = np.mgrid[min(x):max(x):100j, min(y):max(y):100j]
+
+grid_z = griddata((x, y), z, (grid_x, grid_y), method='cubic')
+
+fig = go.Figure(data=[go.Surface(x=grid_x, y=grid_y, z=grid_z)])
+fig.update_layout(title='U1', scene=dict(xaxis_title='q1', yaxis_title='q2', zaxis_title='u1'))
+fig.show()
+
+
+
+#U2
+x = test_df['q1'].values
+y = test_df['q2'].values
+z = test_df['u2'].values
+
+
+grid_x, grid_y = np.mgrid[min(x):max(x):100j, min(y):max(y):100j]
+
+grid_z = griddata((x, y), z, (grid_x, grid_y), method='cubic')
+
+fig = go.Figure(data=[go.Surface(x=grid_x, y=grid_y, z=grid_z)])
+fig.update_layout(title='U2', scene=dict(xaxis_title='q1', yaxis_title='q2', zaxis_title='u2'))
+fig.show()
+
+
+
+#psi
+x = test_df['q1'].values
+y = test_df['q2'].values
+z = test_df['psi'].values
+
+grid_x, grid_y = np.mgrid[min(x):max(x):100j, min(y):max(y):100j]
+
+grid_z = griddata((x, y), z, (grid_x, grid_y), method='cubic')
+
+fig = go.Figure(data=[go.Surface(x=grid_x, y=grid_y, z=grid_z)])
+fig.update_layout(title='Ψ', scene=dict(xaxis_title='q1', yaxis_title='q2', zaxis_title='Ψ'))
+fig.show()
