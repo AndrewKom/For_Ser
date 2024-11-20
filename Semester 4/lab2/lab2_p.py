@@ -83,7 +83,7 @@ print(result_df)
 
 
 
-'''
+
 #Отрисовка графики u1
 fig = plt.figure()
 ax = plt.axes(projection='3d')
@@ -149,7 +149,7 @@ plt.ylabel("q2")
 plt.savefig('psi.png')
 plt.show()
 
-'''
+
 
 max_psi = (result_df['psi1_true'] - result_df['psi1_pred'])**2
 print("max psi:", max_psi.max())
